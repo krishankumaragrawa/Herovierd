@@ -1,17 +1,15 @@
 // ProgramList.js
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 
-const ProgramList = () => {
-  const [programs, setPrograms] = useState([]);
-
+const ProgramList = ({ programs, setPrograms }) => {
   useEffect(() => {
     const fetchPrograms = async () => {
       try {
-        const response = await axios.get('http://localhost:3001/programs');
+        const response = await axios.get("http://localhost:3001/programs");
         setPrograms(response.data);
       } catch (error) {
-        console.error('Error fetching programs:', error);
+        console.error("Error fetching programs:", error);
       }
     };
 
@@ -22,9 +20,9 @@ const ProgramList = () => {
     <div className="flex flex-col w-1/4 p-4 bg-gray-200">
       <h2 className="text-xl font-bold mb-4">Programs</h2>
       <ul>
-        {programs.map((program) => (
-          <li key={program.program_id} className="mb-2">
-            {program.name}
+        {programs.map((item) => (
+          <li key={item.program_id} className="mb-2">
+            {item.name}
           </li>
         ))}
       </ul>
