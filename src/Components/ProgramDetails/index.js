@@ -51,8 +51,10 @@ function ProgramDetails({ programs, setPrograms }) {
 
   return (
     <div>
-      <h1>Program Details</h1>
+      <h1>ADD  NEW PROGRAM</h1>
       <form>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        {/* First Input Row */}
         <div>
           <label htmlFor="name">Name:</label>
           <input
@@ -61,6 +63,7 @@ function ProgramDetails({ programs, setPrograms }) {
             name="name"
             value={newProgram.name}
             onChange={handleInputChange}
+            className="w-full border border-gray-300 rounded p-2"
           />
         </div>
 
@@ -72,6 +75,7 @@ function ProgramDetails({ programs, setPrograms }) {
             name="price"
             value={newProgram.price}
             onChange={handleInputChange}
+            className="w-full border border-gray-300 rounded p-2"
           />
         </div>
 
@@ -83,6 +87,7 @@ function ProgramDetails({ programs, setPrograms }) {
             name="domain"
             value={newProgram.domain}
             onChange={handleInputChange}
+            className="w-full border border-gray-300 rounded p-2"
           />
         </div>
 
@@ -94,6 +99,7 @@ function ProgramDetails({ programs, setPrograms }) {
             name="program_type"
             value={newProgram.program_type}
             onChange={handleInputChange}
+            className="w-full border border-gray-300 rounded p-2"
           />
         </div>
 
@@ -105,6 +111,7 @@ function ProgramDetails({ programs, setPrograms }) {
             name="registrations_status"
             checked={newProgram.registrations_status}
             onChange={handleInputChange}
+            className="w-full border border-gray-300 rounded p-2"
           />
         </div>
 
@@ -115,6 +122,7 @@ function ProgramDetails({ programs, setPrograms }) {
             name="description"
             value={newProgram.description}
             onChange={handleInputChange}
+            className="w-full border border-gray-300 rounded p-2"
           />
         </div>
 
@@ -126,6 +134,7 @@ function ProgramDetails({ programs, setPrograms }) {
             name="placement_assurance"
             checked={newProgram.placement_assurance}
             onChange={handleInputChange}
+            className="w-full border border-gray-300 rounded p-2"
           />
         </div>
 
@@ -137,6 +146,7 @@ function ProgramDetails({ programs, setPrograms }) {
             name="image_url"
             value={newProgram.image_url}
             onChange={handleInputChange}
+            className="w-full border border-gray-300 rounded p-2"
           />
         </div>
 
@@ -148,6 +158,7 @@ function ProgramDetails({ programs, setPrograms }) {
             name="university_name"
             value={newProgram.university_name}
             onChange={handleInputChange}
+            className="w-full border border-gray-300 rounded p-2"
           />
         </div>
 
@@ -159,6 +170,7 @@ function ProgramDetails({ programs, setPrograms }) {
             name="faculty_profile_url"
             value={newProgram.faculty_profile_url}
             onChange={handleInputChange}
+            className="w-full border border-gray-300 rounded p-2"
           />
         </div>
 
@@ -170,6 +182,7 @@ function ProgramDetails({ programs, setPrograms }) {
             name="learning_hours"
             value={newProgram.learning_hours}
             onChange={handleInputChange}
+            className="w-full border border-gray-300 rounded p-2"
           />
         </div>
 
@@ -181,6 +194,7 @@ function ProgramDetails({ programs, setPrograms }) {
             name="duration"
             value={newProgram.duration}
             onChange={handleInputChange}
+            className="w-full border border-gray-300 rounded p-2"
           />
         </div>
 
@@ -192,6 +206,7 @@ function ProgramDetails({ programs, setPrograms }) {
             name="certificate_diploma"
             value={newProgram.certificate_diploma}
             onChange={handleInputChange}
+            className="w-full border border-gray-300 rounded p-2"
           />
         </div>
 
@@ -202,12 +217,18 @@ function ProgramDetails({ programs, setPrograms }) {
             name="eligibility_criteria"
             value={newProgram.eligibility_criteria}
             onChange={handleInputChange}
+            className="w-full border border-gray-300 rounded p-2"
           />
         </div>
+</div>
+<button
+        type="button"
+        onClick={addProgram}
+        className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-700 mt-4"
+      >
+        Add Program
+      </button>
 
-        <button type="button" onClick={addProgram}>
-          Add Program
-        </button>
       </form>
     </div>
   );
